@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temperature</title>
-</head>
-<body>
-  <h1 id="result"></h1>
-  <input type="number" placeholder="enter the temperature" id="input">
-  <button id="btn">Get Suggestions</button>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature</title>
+  </head>
+  <body>
+    <h1 id="result"></h1>
+    <input type="number" placeholder="enter the temperature" id="input" />
+    <button id="btn">Get Suggestions</button>
+  </body>
+  <script>
+    let result = document.getElementById("result");
+    // let input = document.getElementById("input");// here we not use because value change every time when you enter the temperature thats we use input value in functions
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", function () {
+      let input = document.getElementById("input").value;
+      if (input < 20) {
+        result.innerText = "Please wear jacket before going outside";
+      } else if (input >= 20 && input <= 30) {
+        result.innerText = "Please wear  normal shirts";
+      } else if (input > 30) {
+        result.innerText = "Please waer t-shirt before going outside";
+      } else {
+        result.innerText = "Please waer whatever you want";
+      }
+    });
+  </script>
 </html>
